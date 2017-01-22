@@ -64,7 +64,22 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <div class="margin-btm-lg" id="parsets">
+                <div class="btn-tabs btn-active text-center" onclick="setParsets(this.innerText)">Art Museum</div>
+                <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Ballet</div>
+                <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Classical</div>
+                <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Craft Fair</div>
+                <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Dance</div>
+                <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Festival</div>
+                <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Jazz</div>
+                <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Musical</div>
+                <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Opera</div>
+                <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Parks</div>
+                <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Play</div>
+                <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Salsa</div>
+            </div>
+            <div class="col-lg-12">
+                <div class="margin-top-sm margin-btm-lg" id="parsets">
+                    <svg id="parsets" width="960" height="640"></svg>
                 </div>
             </div>
         </div>
@@ -96,8 +111,6 @@
         if (error) throw error;
         
         treemap(data)
-        
-        console.log(data);
 
         var cell = svg.selectAll("g")
                     .data(data["children"])
@@ -116,7 +129,7 @@
             .attr("xlink:href", function(d) { return "#" + d.name; });
 
         cell.append("text")
-            .attr("clip-path", function(d) { console.log(d.name); return "url(#clip-" + d.name + ")"; })
+            .attr("clip-path", function(d) { return "url(#clip-" + d.name + ")"; })
             .append("tspan")
             .attr("x", 4)
             .attr("y", function(d, i) { return 18; })
@@ -131,16 +144,36 @@
     
     chart.dimensions(["Artform", "Income", "Age"]);
 
-    var vis = d3.select("#vis").append("svg")
-        .attr("width", chart.width())
-        .attr("height", chart.height());
+    var parsets = d3.select("svg#parsets").append("svg");
 
-    var body = d3.select(".tooltip-container");
+    /*var body = d3.select(".tooltip-container");
     var tooltips = body.append("div")
-        .attr("class", "parsets tooltips");
+        .attr("class", "parsets tooltips");*/
+
+    var dataset
+
+    d3.csv("datasets/parsets.csv", function(error, data) {
+        if (error) throw error;
+        dataset = data;
+
+        setParsets('Art Museum');
+    })
+
+    function setParsets(text){
+        data = dataset.filter(function(row) {
+            return row['Artform'] == text;
+        })
+        drawParsets(data);
+
+        $("div.btn-tabs").on("click", function(){
+            $("div.btn-tabs").removeClass("btn-active");
+            $(this).addClass("btn-active")
+        })
+    }
 
     function drawParsets(data){
-        vis.datum(data).call(chart);
+        parsets.datum(data).call(chart);
+
         /*chart.tooltip(function(d, i){
             var count = d.count, path = [];
             while (d.parent) {

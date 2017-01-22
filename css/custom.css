@@ -55,5 +55,25 @@ h4 {
     shape-rendering: crispEdges;
 }
 
+.btn-tabs{
+	display: inline-block;
+	height: 30px;
+	padding-left: 8px;
+	padding-right: 8px;
+	min-width: 72px;
+	font-size: 14px;
+	font-family: 'Helvetica Neue';
+	line-height: 28px;
+	border: #444 1px solid;
+	color: #444;
+	background-color: #fff;
+	margin-right: 12px;
+	cursor: pointer;
+}
+
+.btn-active {
+	background-color: #444 !important;
+	color: #fff !important;
+}
 
 
