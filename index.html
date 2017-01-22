@@ -53,18 +53,79 @@
                 <p class="body-text margin-md">Our visualization explores how Americans participate in the arts based on year, state, age, income, education level and specific art form. We drew our data from the Interuniversity Consortium for Political and Social Research’s (ICPSR) Survey of Public Participation in the Arts. We base our solution on Parallel Sets, a visualization strategy for multivariate, categorical data.</p>
             </div>
         </div>
-    </div>
-    <div class="container">
+
         <div class="row">
-            <div class="col-lg-8">
-                <div class="margin-btm-lg" id="vis"></div>
+            <div class="col-lg-12">
+                <div class="margin-btm-lg">
+                    <svg  id="treemap" width="960" height="540"></svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="margin-btm-lg" id="parsets">
+                </div>
             </div>
         </div>
     </div>
 </body>
 
-<script type="text/javascript">
-    
+<script>
+    var svg = d3.select("svg#treemap"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
+
+    var color = d3.scale.category20c();
+
+    var treemap = d3.layout.treemap()
+                    .size([width, height])
+                    .round(true)
+                    .value(function(d) {
+                        return d.size;
+                    });
+
+    function initialize(root) {
+        root.x = root.y = 0;
+        root.dx = width;
+        root.dy = height;
+        root.depth = 0;
+    }
+
+    d3.json("datasets/treemap.json", function(error, data) {
+        if (error) throw error;
+        
+        treemap(data)
+        
+        console.log(data);
+
+        var cell = svg.selectAll("g")
+                    .data(data["children"])
+                    .enter().append("g")
+                    .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+        cell.append("rect")
+            .attr("id", function(d) { return d.name; })
+            .attr("width", function(d) { return d.dx; })
+            .attr("height", function(d) { return d.dy ; })
+            .attr("fill", function(d) { return color(d.name); });
+
+        cell.append("clipPath")
+            .attr("id", function(d) { return "clip-" + d.name; })
+            .append("use")
+            .attr("xlink:href", function(d) { return "#" + d.name; });
+
+        cell.append("text")
+            .attr("clip-path", function(d) { console.log(d.name); return "url(#clip-" + d.name + ")"; })
+            .append("tspan")
+            .attr("x", 4)
+            .attr("y", function(d, i) { return 18; })
+            .text(function(d) { return d.name; });
+
+        cell.append("title")
+            .text(function(d) { return d.name + "\n" + d.value; });
+    });
+
 
     var chart = d3.parsets();
     
@@ -77,12 +138,6 @@
     var body = d3.select(".tooltip-container");
     var tooltips = body.append("div")
         .attr("class", "parsets tooltips");
-
-    var state1, state2;
-
-    d3.csv("data/california.csv", function(error, data) {
-        state1 = data;
-    });
 
     function drawParsets(data){
         vis.datum(data).call(chart);
@@ -108,6 +163,6 @@
 </script>
 
 <!-- Custom JS -->
-<script type="text/javascript" src="js/custom.js"></script>
+<!-- <script type="text/javascript" src="js/custom.js"></script> -->
 
 </html>
