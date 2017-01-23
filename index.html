@@ -18,6 +18,7 @@
 
     <!-- Custom CSS -->
     <link href="css/custom.css" rel="stylesheet">
+    <link href="css/portfolio.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
 
     <style>
@@ -42,25 +43,72 @@
             fill: #333;
             font-weight: 400; 
         }
+
+        div.cover-image{
+            margin-top: 72px;
+            height: 420px;
+            background: url(images/cover.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: 0px 80px;
+        }
     </style>
 </head>
 
-<body id="page-top">
+<body>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
-                <h1 class="title margin-top-lg">Analysing how Americans engage in Arts</h1>
-                <p class="body-text margin-top-md">In this project we used the dataset provided by Interuniversity Consortium for Political and Social Research’s (ICPSR) Survey of Public Participation in the Arts. This is a particularly rich dataset obtained from a survey conducted about people's participation in different artforms in 5 different years since 1982. It has both hierarchical and multivariate data, which contains parameters such as Year, Region, Income, Education level and Age of the participants along with other information.</p>
+            <div class="col-md-12 col-xs-12 text-center">
+                <div class="navbar nav-fix-top">
+                    <a class="page-header" id="title-header" href="../index.html">
+                        <h1 class="uppercase text-shrink">Abhraneel Sarma</h1>
+                    </a>
+                    <div class="hr">
+                        <div class="row">
+                            <div class="col-sm-2 col-sm-offset-3 col-xs-4">
+                                <div class="nav-page-tabs">
+                                    <div class="current-page">
+                                        <a class="quick-links-current" href="../index.html">Work</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 col-xs-4">
+                                <div class="nav-page-tabs">
+                                    <a class="quick-links" href="https://drive.google.com/file/d/0B7ZA2gHdFDLhdS1PcTJvRTFCVG8/view?usp=sharing" target="_blank">Resume</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 col-xs-4">
+                                <div class="nav-page-tabs">
+                                    <a class="quick-links" href="../about/index.html">About</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cover-image"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-1 col-sm-12">
+                <h2 class="title margin-top-lg">Analysing how Americans engage in Arts</h2>
+            </div>
+            <div class="col-lg-6 col-lg-offset-1 col-sm-12">
+                <p class="body-text margin-top-sm">In this project we used the dataset provided by Interuniversity Consortium for Political and Social Research’s (ICPSR) Survey of Public Participation in the Arts. This is a particularly rich dataset obtained from a survey conducted about people's participation in different artforms in 5 different years since 1982. It has both hierarchical and multivariate data, which contains parameters such as Year, Region, Income, Education level and Age of the participants along with other information.</p>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-6 col-lg-offset-1 col-sm-12">
                 <h4 class="section margin-top-lg">The Visualization</h4>
                 <p class="body-text">To develop our visualization, we first defined the types of tasks that this dataset affords: determining <b>the popularity of different artforms</b>, the <b>distribution by region</b> for each artform and <b>the demographic distribution of people interested in a particular artform</b>. We found that treemaps are perfectly suited for the first two tasks as it allows the efficient visualization of hierarchical dataset. In this visualization, we show the relative popularity of different artforms across the 5 surveys.</p>
                 <p class="note-text">Note: Currently the treemaps only afford the first task. We are changing this shortly to a zoomable Treemap to include state data as well.</p>
             </div>
-            <div class="col-lg-12">
+            <div class="col-lg-8 col-lg-offset-1 col-sm-12">
                 <div class="margin-top-md margin-btm-lg">
                     <svg  id="treemap" width="800" height="450"></svg>
                 </div>
@@ -68,11 +116,11 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-6 col-lg-offset-1 col-sm-12">
                 <h4 class="section margin-top-sm">Visualization of Demographic Distribution</h4>
                 <p class="body-text">When we look at the demographic information such as income, age and education, we wish to find <b>the category most of the people belong</b> to. We base our solution on Parallel Sets, a visualization strategy for multivariate, categorical data. Parsets allows the user to look at the distribution by these categories, reorder these categories and look at the sub categories.</p>
             </div>
-            <div class="col-lg-12 margin-top-md">
+            <div class="col-lg-11 col-lg-offset-1 margin-top-md">
                 <div class="btn-tabs btn-active text-center" onclick="setParsets(this.innerText)">Art Museum</div>
                 <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Ballet</div>
                 <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Classical</div>
@@ -86,16 +134,48 @@
                 <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Play</div>
                 <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Salsa</div>
             </div>
-            <div class="col-lg-12">
+            <div class="col-lg-10 col-lg-offset-1 col-sm-12">
                 <div class="margin-top-sm margin-btm-lg" id="parsets">
                     <svg id="parsets" width="960" height="600"></svg>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-6 col-lg-offset-1 col-sm-12">
                 <h4 class="section margin-top-sm">Going Forward</h4>
-                <p class="body-text margin-btm-lg">Taking this forward, one interesting analysis that a visualization could afford is to see how people share interests and how can demographics influence these interests. For example: <b>do people who belong to certain demographic and are interested in a particular artform have a propensity to share interests?</b></p>
+                <p class="body-text">Taking this forward, one interesting analysis that a visualization could afford is to see how people share interests and how can demographics influence these interests. For example: <b>do people who belong to certain demographic and are interested in a particular artform have a propensity to share interests?</b></p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 col-xs-12">
+            <div class="sr margin-top-lg"></div>
+            <ul class="list-inline list-unstyled text-center">
+                <div class="project-list">
+                    <a class="footer-list" href="../chi17/index.html">Elevate</a>
+                </div>
+                <div class="project-list">
+                    <a class="footer-list" href="../algo/index.html">AlgoPlay</a>
+                </div>
+                <div class="project-list">
+                    <a class="footer-list" href="../segregate/index.html">Segregate</a>
+                </div>
+                <div class="project-list">
+                    <a class="footer-list" href="../kaahor-xorai/index.html">Kaahor Xorai</a>
+                </div>
+                <div class="project-list">
+                    <a class="footer-list" href="../Football-Transfers-Vis/index.html">PL Transfers</a>
+                </div>
+                <div class="project-list">
+                    <a class="footer-list" href="../project-bee/index.html">Project Bee</a>
+                </div>
+                <div class="project-list">
+                    <a class="footer-list" href="../engage/index.html">Engage</a>
+                </div>
+            </ul>
+            <div class="sr"></div>
+            <div class="page-footer">
+                <p class="footer-text text-center">Abhraneel Sarma © 2016</p>
             </div>
         </div>
     </div>
@@ -209,8 +289,13 @@
         })*/
     }
 </script>
+<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-<!-- Custom JS -->
-<!-- <script type="text/javascript" src="js/custom.js"></script> -->
-
+        ga('create', 'UA-79877752-1', 'auto');
+        ga('send', 'pageview');
+</script>
 </html>

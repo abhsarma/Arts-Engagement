@@ -1,9 +1,4 @@
-h1 {
-	font-family: 'Lora', serif;
-	font-weight: 700;
-	font-size: 36px;
-	line-height: 48px;
-}
+
 
 h4.section {
 	font-family: 'Helvetica Neue', sans-serif;
@@ -13,8 +8,8 @@ h4.section {
 
 .body-text {
 	font-family: 'Helvetica Neue', sans-serif;
-	font-weight: 400;
-	font-size: 16px;
+	font-weight: 300;
+	font-size: 15px;
 	line-height: 24px;
 }
 
@@ -39,16 +34,16 @@ h4.section {
 }
 
 .margin-top-md{
-	margin-top: 48px !important;
+	margin-top: 36px !important;
 }
 
 .margin-btm-md{
-	margin-bottom: 48px !important;
+	margin-bottom: 36px !important;
 }
 
 .margin-md{
-	margin-top: 48px !important;
-	margin-bottom: 48px !important;
+	margin-top: 36px !important;
+	margin-bottom: 36px !important;
 }
 
 .margin-top-sm{
