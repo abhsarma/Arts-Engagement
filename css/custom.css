@@ -5,17 +5,29 @@ h1 {
 	line-height: 48px;
 }
 
-h4 {
+h4.section {
 	font-family: 'Helvetica Neue', sans-serif;
 	font-weight: 600;
-	font-size: 24px;
+	font-size: 20px;
 }
 
 .body-text {
 	font-family: 'Helvetica Neue', sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 16px;
 	line-height: 24px;
+}
+
+.note-text {
+	font-family: 'Helvetica Neue', sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.margin-lg{
+	margin-top: 72px !important;
+	margin-bottom: 72px !important;
 }
 
 .margin-top-lg{
@@ -60,8 +72,8 @@ h4 {
 	height: 30px;
 	padding-left: 8px;
 	padding-right: 8px;
-	min-width: 72px;
-	font-size: 14px;
+	min-width: 64px;
+	font-size: 12px;
 	font-family: 'Helvetica Neue';
 	line-height: 28px;
 	border: #444 1px solid;

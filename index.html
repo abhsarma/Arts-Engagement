@@ -30,14 +30,14 @@
         }
 
         .dimension tspan.name {
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'Helvetica Neue', sans-serif;
             font-size: 24px;
             fill: #333;
-            font-weight: 600; 
+            font-weight: 600;
         }
 
         .category text{
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'Helvetica Neue', sans-serif;
             font-size: 16px;
             fill: #333;
             font-weight: 400; 
@@ -50,20 +50,29 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1 class="title margin-top-lg">Analysing how Americans engage in Arts</h1>
-                <p class="body-text margin-md">Our visualization explores how Americans participate in the arts based on year, state, age, income, education level and specific art form. We drew our data from the Interuniversity Consortium for Political and Social Research’s (ICPSR) Survey of Public Participation in the Arts. We base our solution on Parallel Sets, a visualization strategy for multivariate, categorical data.</p>
+                <p class="body-text margin-top-md">In this project we used the dataset provided by Interuniversity Consortium for Political and Social Research’s (ICPSR) Survey of Public Participation in the Arts. This is a particularly rich dataset obtained from a survey conducted about people's participation in different artforms in 5 different years since 1982. It has both hierarchical and multivariate data, which contains parameters such as Year, Region, Income, Education level and Age of the participants along with other information.</p>
             </div>
         </div>
 
         <div class="row">
+            <div class="col-lg-8">
+                <h4 class="section margin-top-lg">The Visualization</h4>
+                <p class="body-text">To develop our visualization, we first defined the types of tasks that this dataset affords: determining <b>the popularity of different artforms</b>, the <b>distribution by region</b> for each artform and <b>the demographic distribution of people interested in a particular artform</b>. We found that treemaps are perfectly suited for the first two tasks as it allows the efficient visualization of hierarchical dataset. In this visualization, we show the relative popularity of different artforms across the 5 surveys.</p>
+                <p class="note-text">Note: Currently the treemaps only afford the first task. We are changing this shortly to a zoomable Treemap to include state data as well.</p>
+            </div>
             <div class="col-lg-12">
-                <div class="margin-btm-lg">
+                <div class="margin-top-md margin-btm-lg">
                     <svg  id="treemap" width="960" height="540"></svg>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-8">
+                <h4 class="section margin-top-sm">Visualization of Demographic Distribution</h4>
+                <p class="body-text">We base our solution on Parallel Sets, a visualization strategy for multivariate, categorical data.</p>
+            </div>
+            <div class="col-lg-12 margin-top-md">
                 <div class="btn-tabs btn-active text-center" onclick="setParsets(this.innerText)">Art Museum</div>
                 <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Ballet</div>
                 <div class="btn-tabs text-center" onclick="setParsets(this.innerText)">Classical</div>
