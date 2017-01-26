@@ -30,6 +30,13 @@
             padding: 5px;
         }
 
+        tspan {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 14px;
+            fill: #444;
+            font-weight: 400; 
+        }
+
         .dimension tspan.name {
             font-family: 'Helvetica Neue', sans-serif;
             font-size: 24px;
@@ -186,7 +193,9 @@
         width = +svg.attr("width"),
         height = +svg.attr("height");
 
-    var color = d3.scale.category20c();
+    var color = d3.scale.category20c()
+                    .range(["#5EA3C3", "#79B9CC", "#8CC8D2", "#A0D8D9", "#B1E6DE", "#B2DDDC", "#B4D2DB", "#B1C3D8", "#AFB4D5", "#ACA3D1", 
+                        "#B5A3CD", "#C1A7C8", "#CEADC4", "#DCB2BE", "#E9B7BA", "#E1BDBE", "#D5C0C1", "#C2C6C8", "#B2CCCE", "#A4CFD2"]);
 
     var treemap = d3.layout.treemap()
                     .size([width, height])
