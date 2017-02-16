@@ -11,29 +11,28 @@
 .dimension > rect { display: none; }
 .category:hover rect { fill-opacity: .6; }
 .dimension:hover > rect { fill-opacity: .6; }
-.ribbon path { stroke-opacity: 0; fill-opacity: .1; }
+.ribbon path { stroke-opacity: 0; fill-opacity: .2; }
 .ribbon path.active { fill-opacity: .9; }
 .ribbon-mouse path { fill-opacity: 0; }
 
-.category-0 { fill: #1f77b4; stroke: #1f77b4; }
-.category-1 { fill: #ff7f0e; stroke: #ff7f0e; }
-.category-2 { fill: #2ca02c; stroke: #2ca02c; }
-.category-3 { fill: #d62728; stroke: #d62728; }
-.category-4 { fill: #9467bd; stroke: #9467bd; }
-.category-5 { fill: #8c564b; stroke: #8c564b; }
-.category-6 { fill: #e377c2; stroke: #e377c2; }
-.category-7 { fill: #7f7f7f; stroke: #7f7f7f; }
-.category-8 { fill: #bcbd22; stroke: #bcbd22; }
-.category-9 { fill: #17becf; stroke: #17becf; }
+.category-0 { fill: #79B9CC; stroke: #79B9CC; }
+.category-1 { fill: #8CC8D2; stroke: #8CC8D2; }
+.category-2 { fill: #A0D8D9; stroke: #A0D8D9; }
+.category-3 { fill: #B1E6DE; stroke: #B1E6DE; }
+.category-4 { fill: #B2DDDC; stroke: #B2DDDC; }
+.category-5 { fill: #B4D2DB; stroke: #B4D2DB; }
+.category-6 { fill: #B1C3D8; stroke: #B1C3D8; }
+.category-7 { fill: #AFB4D5; stroke: #AFB4D5; }
+.category-8 { fill: #ACA3D1; stroke: #ACA3D1; }
+.category-9 { fill: #B5A3CD; stroke: #B5A3CD; }
 
-
-.line-category-0 { fill: #1f77b4; stroke: #1f77b4 !important; }
-.line-category-1 { fill: #ff7f0e; stroke: #ff7f0e !important; }
-.line-category-2 { fill: #2ca02c; stroke: #2ca02c !important; }
-.line-category-3 { fill: #d62728; stroke: #d62728 !important; }
-.line-category-4 { fill: #9467bd; stroke: #9467bd !important; }
-.line-category-5 { fill: #8c564b; stroke: #8c564b !important; }
-.line-category-6 { fill: #e377c2; stroke: #e377c2 !important; }
-.line-category-7 { fill: #7f7f7f; stroke: #7f7f7f !important; }
-.line-category-8 { fill: #bcbd22; stroke: #bcbd22 !important; }
-.line-category-9 { fill: #17becf; stroke: #17becf !important; }
+.line-category-0 { fill: #79B9CC; stroke: #79B9CC !important; }
+.line-category-1 { fill: #8CC8D2; stroke: #8CC8D2 !important; }
+.line-category-2 { fill: #A0D8D9; stroke: #A0D8D9 !important; }
+.line-category-3 { fill: #B1E6DE; stroke: #B1E6DE !important; }
+.line-category-4 { fill: #B2DDDC; stroke: #B2DDDC !important; }
+.line-category-5 { fill: #B4D2DB; stroke: #B4D2DB !important; }
+.line-category-6 { fill: #B1C3D8; stroke: #B1C3D8 !important; }
+.line-category-7 { fill: #AFB4D5; stroke: #AFB4D5 !important; }
+.line-category-8 { fill: #ACA3D1; stroke: #ACA3D1 !important; }
+.line-category-9 { fill: #B5A3CD; stroke: #B5A3CD !important; }
