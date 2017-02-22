@@ -1,20 +1,18 @@
-
-
 h4.section {
-	font-family: 'Helvetica Neue', sans-serif;
+	font-family: 'Avenir Next', sans-serif;
 	font-weight: 600;
 	font-size: 20px;
 }
 
 .body-text {
-	font-family: 'Helvetica Neue', sans-serif;
+	font-family: 'Avenir Next', sans-serif;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 24px;
 }
 
 .note-text {
-	font-family: 'Helvetica Neue', sans-serif;
+	font-family: 'Avenir Next', sans-serif;
 	font-weight: 300;
 	font-size: 14px;
 	font-style: italic;
@@ -69,7 +67,7 @@ h4.section {
 	padding-right: 8px;
 	min-width: 64px;
 	font-size: 12px;
-	font-family: 'Helvetica Neue';
+	font-family: 'Avenir Next';
 	line-height: 28px;
 	border: #444 1px solid;
 	color: #444;
@@ -82,5 +80,3 @@ h4.section {
 	background-color: #444 !important;
 	color: #fff !important;
 }
-
-
